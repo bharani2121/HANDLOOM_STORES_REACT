@@ -1,0 +1,180 @@
+/* AllUsers.css - Modern styling for customer table */
+
+.user-table-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.user-table-container:hover {
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+  transform: translateY(-5px);
+}
+
+.user-table-container h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+  padding-bottom: 0.75rem;
+}
+
+.user-table-container h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #6366f1, #8b5cf6);
+  border-radius: 2px;
+}
+
+.user-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 1.5rem;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05);
+}
+
+.user-table thead {
+  background: linear-gradient(90deg, #f9fafb, #f3f4f6);
+}
+
+.user-table th {
+  text-align: left;
+  padding: 1rem 1.5rem;
+  font-weight: 600;
+  color: #4b5563;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.user-table tbody tr {
+  transition: all 0.2s ease;
+}
+
+.user-table tbody tr:nth-child(even) {
+  background-color: #f9fafb;
+}
+
+.user-table tbody tr:hover {
+  background-color: #f0f9ff;
+  transform: scale(1.005);
+}
+
+.user-table td {
+  padding: 1rem 1.5rem;
+  color: #374151;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.user-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Column specific styling */
+.user-table th:first-child,
+.user-table td:first-child {
+  width: 60px;
+  text-align: center;
+  color: #6366f1;
+  font-weight: 600;
+}
+
+.user-table td:nth-child(2) {
+  font-weight: 500;
+}
+
+.user-table td:nth-child(3) {
+  color: #4b5563;
+}
+
+.user-table td:nth-child(4) {
+  font-family: monospace;
+  letter-spacing: 0.5px;
+  color: #6366f1;
+}
+
+/* Empty state styling */
+.user-table-container p {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #6b7280;
+  font-size: 1.1rem;
+  background-color: #f9fafb;
+  border-radius: 8px;
+  border: 1px dashed #d1d5db;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .user-table-container {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+  
+  .user-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  
+  .user-table th,
+  .user-table td {
+    padding: 0.75rem 1rem;
+  }
+  
+  .user-table-container h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Animation for new users (can be added dynamically in React) */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.new-user {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+/* Custom scrollbar for the table when overflowing */
+.user-table-container::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.user-table-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.user-table-container::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 4px;
+}
+
+.user-table-container::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}

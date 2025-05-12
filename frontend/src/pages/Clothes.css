@@ -1,0 +1,257 @@
+/* Clothes.css - Complete File with Curved Dropdown */
+
+.page.clothes {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .page.clothes h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+  }
+  
+  /* Search Bar Styles */
+  .search-bar {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+  }
+  
+  .search-bar input {
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    width: 300px;
+    font-size: 1rem;
+  }
+  
+  .search-bar input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+  }
+  
+  /* Select Dropdown Styles with Curved Edges */
+  .search-bar select {
+    padding: 8px 12px;
+    border-radius: 8px; /* Increased border radius for more curved edges */
+    border: 1px solid #ddd;
+    font-size: 1rem;
+    background-color: white;
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    -webkit-appearance: none; /* Removes default styling on some browsers */
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='%23888' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    padding-right: 30px; /* Make room for the dropdown arrow */
+  }
+  
+  .search-bar select:hover {
+    border-color: #aaa;
+  }
+  
+  .search-bar select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+  }
+  
+  /* Style for dropdown options with curved edges */
+  .search-bar select option {
+    padding: 10px 12px;
+    cursor: pointer;
+    border-radius: 6px; /* Curved edges for options */
+    margin: 2px 0;
+  }
+  
+  /* Pale color hover effects for different options */
+  .search-bar select option:nth-child(1):hover {
+    background-color: #f8f9fa; /* Light gray */
+    border-radius: 6px;
+  }
+  
+  .search-bar select option:nth-child(2n):hover {
+    background-color: #e6f7ff; /* Pale blue */
+    border-radius: 6px;
+  }
+  
+  .search-bar select option:nth-child(3n):hover {
+    background-color: #f3e5f5; /* Pale purple */
+    border-radius: 6px;
+  }
+  
+  .search-bar select option:nth-child(4n):hover {
+    background-color: #e8f5e9; /* Pale green */
+    border-radius: 6px;
+  }
+  
+  .search-bar select option:nth-child(5n):hover {
+    background-color: #fff8e1; /* Pale yellow */
+    border-radius: 6px;
+  }
+  
+  .search-bar select option:nth-child(6n):hover {
+    background-color: #fff0f0; /* Pale red */
+    border-radius: 6px;
+  }
+  
+  .search-bar select option:checked {
+    background-color: #e3f2fd;
+    font-weight: 500;
+    border-radius: 6px;
+  }
+  
+  /* Custom dropdown styling for better appearance */
+  .search-bar select::-ms-expand {
+    display: none; /* Hide the default arrow in IE */
+  }
+  
+  /* Cloth List Styles */
+  .cloth-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+  }
+  
+  .cloth-card {
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  }
+  
+  .cloth-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .cloth-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .cloth-card h3 {
+    margin: 15px 15px 5px;
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
+  .cloth-card .price {
+    margin: 5px 15px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #e91e63;
+  }
+  
+  .cloth-card .description {
+    margin: 10px 15px;
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+  
+  .category-tag {
+    display: inline-block;
+    margin: 0 15px 10px;
+    padding: 4px 8px;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    color: #555;
+  }
+  
+  .cloth-actions {
+    display: flex;
+    gap: 10px;
+    padding: 15px;
+    border-top: 1px solid #eee;
+  }
+  
+  .cloth-actions button {
+    flex: 1;
+    padding: 8px 0;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .cloth-actions button:hover {
+    background-color: #0056b3;
+  }
+  
+  .cloth-actions button:nth-child(2) {
+    background-color: #28a745;
+  }
+  
+  .cloth-actions button:nth-child(2):hover {
+    background-color: #218838;
+  }
+  
+  .cloth-actions button:nth-child(3) {
+    background-color: #dc3545;
+  }
+  
+  .cloth-actions button:nth-child(3):hover {
+    background-color: #c82333;
+  }
+  
+  /* Success Toast Notification */
+  .success-toast {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    animation: fadeIn 0.3s, fadeOut 0.3s 1.7s;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes fadeOut {
+    from { opacity: 1; transform: translateY(0); }
+    to { opacity: 0; transform: translateY(-20px); }
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .search-bar {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .search-bar input,
+    .search-bar select {
+      width: 100%;
+      max-width: 400px;
+    }
+    
+    .cloth-list {
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .cloth-list {
+      grid-template-columns: 1fr;
+    }
+  }

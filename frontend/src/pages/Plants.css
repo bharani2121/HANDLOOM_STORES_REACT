@@ -1,0 +1,208 @@
+/* General Page Styling */
+.page.plants {
+  padding: 2rem;
+  background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), 
+              url('https://images.unsplash.com/photo-1445205170230-053b83016050?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+  background-attachment: fixed;
+  background-size: cover;
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.page.plants h2 {
+  text-align: center;
+  color: #2d3748; /* Dark blue-gray */
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+/* Search Bar */
+.search-bar {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.search-bar input {
+  padding: 0.8rem 1.2rem;
+  width: 60%;
+  max-width: 400px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 1rem;
+  background-color: #f7fafc;
+  outline: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.search-bar input:focus {
+  border-color: #3182ce;
+  background-color: #fff;
+  box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.2);
+}
+
+/* Plant List Grid */
+.plant-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.8rem;
+  justify-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Plant Card Styling */
+.plant-card {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+  text-align: center;
+  width: 100%;
+  max-width: 280px;
+  transition: all 0.3s ease;
+  border: 1px solid #edf2f7;
+}
+
+.plant-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  border-color: #cbd5e0;
+}
+
+/* Plant Image */
+.plant-image {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  border-radius: 8px;
+  margin-bottom: 1.2rem;
+  border: 1px solid #edf2f7;
+}
+
+/* Plant Info */
+.plant-card h3 {
+  font-size: 1.3rem;
+  color: #2d3748;
+  margin-bottom: 0.6rem;
+  font-weight: 600;
+}
+
+.price {
+  color: #3182ce; /* Brand blue */
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+}
+
+.description {
+  font-size: 0.95rem;
+  color: #4a5568;
+  margin-bottom: 1.2rem;
+  line-height: 1.5;
+}
+
+/* Plant Actions */
+.plant-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  gap: 0.8rem;
+}
+
+.plant-actions button {
+  flex: 1;
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.plant-actions button:nth-child(1) {
+  background-color: #3182ce; /* View */
+}
+
+.plant-actions button:nth-child(2) {
+  background-color: #38a169; /* Edit */
+}
+
+.plant-actions button:nth-child(3) {
+  background-color: #e53e3e; /* Delete */
+}
+
+.plant-actions button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Success Toast */
+.success-toast {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #3182ce;
+  color: white;
+  padding: 14px 24px;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 500;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  animation: slideInFadeOut 2.5s ease-in-out;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@keyframes slideInFadeOut {
+  0% {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  10% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+  90% {
+      opacity: 1;
+  }
+  100% {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+}
+
+/* Responsive Layout */
+@media (max-width: 1024px) {
+  .plant-list {
+      grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .plant-list {
+      grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .search-bar input {
+      width: 80%;
+  }
+}
+
+@media (max-width: 480px) {
+  .plant-list {
+      grid-template-columns: 1fr;
+  }
+  
+  .plant-card {
+      max-width: 100%;
+  }
+  
+  .plant-actions {
+      flex-direction: column;
+  }
+}
